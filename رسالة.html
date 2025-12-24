@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>مبروك يا ملوكة 💖</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at top, #ffe6f0, #ffd1dc, #ffc1d6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cairo", sans-serif;
+    overflow: hidden;
+}
+
+/* كارت الرسالة */
+.card {
+    background: #ffffff;
+    padding: 36px;
+    border-radius: 36px;
+    width: 92%;
+    max-width: 480px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+    animation: cardIn 1.4s ease;
+    z-index: 2;
+}
+
+@keyframes cardIn {
+    from { transform: scale(0.8) translateY(60px); opacity: 0; }
+    to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+h1 {
+    color: #ff3f8b;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+p {
+    color: #444;
+    font-size: 18px;
+    line-height: 1.95;
+}
+
+.hearts {
+    font-size: 28px;
+    margin-top: 18px;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #666;
+}
+
+/* ألعاب نارية */
+.firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: transparent;
+    animation: fire 1.8s infinite;
+}
+
+@keyframes fire {
+    0% { box-shadow: 0 0 #ff4f8b; opacity: 1; }
+    100% {
+        box-shadow:
+        0 -90px #ff4f8b,
+        65px -65px #ffd1dc,
+        90px 0 #ffb6c1,
+        65px 65px #ff80ab,
+        0 90px #ff4081,
+        -65px 65px #f48fb1,
+        -90px 0 #ec407a,
+        -65px -65px #ff99cc;
+        opacity: 0;
+    }
+}
+
+/* قلوب طايرة */
+.heart {
+    position: absolute;
+    bottom: -20px;
+    color: rgba(255, 79, 139, 0.8);
+    font-size: 20px;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) scale(1.6);
+        opacity: 0;
+    }
+}
+
+/* كونفتي */
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    background-color: pink;
+    top: -20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ألعاب نارية -->
+<div class="firework" style="top:15%; left:20%;"></div>
+<div class="firework" style="top:25%; left:80%;"></div>
+<div class="firework" style="top:65%; left:15%;"></div>
+<div class="firework" style="top:70%; left:75%;"></div>
+<div class="firework" style="top:40%; left:50%;"></div>
+
+<!-- كارت -->
+<div class="card">
+    <h1>🎓 ألف ألف مبروك يا ملوكة 💖</h1>
+
+    <p>
+        دي حاجة بسيطة قوي عشانك بمناسبة نجاحك،  
+        بس حابب أقولك إنك مش مجرد شخص في حياتي،  
+        إنتِ <b>أكتر من أخت</b> وحاجة جميلة ربنا رزقني بيها ✨  
+        <br><br>
+        من أحلى الصدف في حياتي إني عرفتك،  
+        وبحمد ربنا كل يوم إنك موجودة،  
+        وجودك فرق فعلًا،  
+        وضحكتك بتطمن، وكلامك بيهوّن أي حاجة 🤍  
+        <br><br>
+        نجاحك فرّحني من قلبي،  
+        لأني عارف تعبك وقد إيه استحملتي،  
+        وكنت واثق إنك هتنجحي  
+        لأنك تستاهلي الخير دايمًا 🌸  
+        <br><br>
+        ربنا يخليكي ليا وما يحرمنيش منك،  
+        ومن نجاح لنجاح دايمًا يا رب،  
+        ودايمًا أشوفك فرحانة ومبسوطة  
+        وبتحققي اللي بتحلمي بيه 🌷  
+        <br><br>
+        بس المرة الجاية بقى  
+        <b>بمجهودنا مش بالهبد</b> 😂💪
+    </p>
+
+    <div class="hearts">🎊💗✨💃</div>
+
+    <div class="footer">
+        مع كل الحب — <b>بودي</b> 🤍
+    </div>
+</div>
+
+<script>
+// توليد قلوب
+for (let i = 0; i < 30; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.fontSize = (16 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+}
+
+// توليد كونفتي
+const colors = ["#ff4f8b", "#ffd1dc", "#ffb6c1", "#ff80ab", "#f48fb1"];
+for (let i = 0; i < 60; i++) {
+    let conf = document.createElement("div");
+    conf.className = "confetti";
+    conf.style.left = Math.random() * 100 + "vw";
+    conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    conf.style.animationDuration = (4 + Math.random() * 4) + "s";
+    conf.style.opacity = Math.random();
+    document.body.appendChild(conf);
+}
+</script>
+
+</body>
+</html>
